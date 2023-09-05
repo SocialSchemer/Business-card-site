@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ваши проекты</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    text-align: center;
+    color: white;
+  }
+
+  h1 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Всплывающая кнопка "Проекты" */
+  .popup-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+  }
+
+  .popup-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Модальное окно с информацией о проектах */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+  }
+  .contact-link:hover {
+    transform: scale(1.1);
+    border-color: #333;
+  }
+
+  .contact-link.highlight-button:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  .contact-link {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(8, 4, 4);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Закрыть модальное окно */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  /* Left Button */
+  .left-button {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+  }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Добро пожаловать на страницу с вашими проектами!</h1>
+    <p>Нажмите на кнопку "Проекты", чтобы увидеть вашу информацию о проектах.</p>
+    
+    <!-- Перенос кнопки под текст -->
+    <button class="popup-button" onclick="openModal()">Проекты</button>
+    
+    <!-- Модальное окно с информацией о проектах -->
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <!-- Закрыть модальное окно -->
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Информация о проектах в которых я принимал участие</h2>
+        <!-- Здесь можете разместить вашу информацию о проектах -->
+        <p>1. FunPayTeam - Тима по работе с фанпеем, топ 1 ру тима.</p>
+        <p>2. MineLeak - Форум майнкрафт тематики, было написно более 5 плагинов.</p>
+        <p>3. EndWay - Форум IT тематики, было написано более 2 плагинов а так-же тестирование форума.</p>
+        <p>4. 48 Законов власти (тг канал) - Был создан шаблон а так-же оформление постов.</p>
+        <p>5. v-h.su - Слил более 10 различных приватных плагинов, так-же скриптов.</p>
+        <!-- Закрыть модальное окно -->
+        <button class="popup-button" onclick="closeModal()">Закрыть</button>
+      </div>
+    </div>
+  </div>
+  <div class="contact-item left-button">
+    <a href="index.html" class="contact-link highlight-button">
+      Назад
+    </a>
+    </div>
+
+  <script>
+    // Открыть модальное окно
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    // Закрыть модальное окно
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
